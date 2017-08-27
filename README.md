@@ -1,2 +1,9 @@
-# just-todo-it
-A simple React based todo list application
+# A simple todo list app based on React
+
+### Getting Started
+
+```
+> clone the repo
+> npm install
+> npm start
+```
