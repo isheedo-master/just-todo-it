@@ -31,7 +31,7 @@ class TodoSearch extends Component {
             <input ref="toggleDone" type="checkbox"
               onChange={this.handleSearch}
             />
-            Show/hide completed todos
+            Hide completed todos
           </label>
         </div>
       </form>

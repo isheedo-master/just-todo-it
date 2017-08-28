@@ -15,8 +15,12 @@ class TodoList extends Component {
     });
 
     return (
-      <ul>
-        {renderTodos.length > 0 ? renderTodos : 'No ongoing todos found. Create some would you?'}
+      <ul className="todolist">
+        {renderTodos.length > 0 ? renderTodos : (
+          <h3 className="text-center text-uppercase text-fallback">
+            'No ongoing todos found. Create some would you?'
+          </h3>
+        )}
       </ul>
     )
   }

@@ -1,0 +1,12 @@
+button {
+  font-size: 1.6rem;
+  width: 100%;
+  background: $success-color-base;
+  color: $color-white-base;
+  border: 1px solid darken($success-color-base, 5%);
+  padding: 1rem 0;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background: darken($success-color-base, 8%);
+  }
+}

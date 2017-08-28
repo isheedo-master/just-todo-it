@@ -11,7 +11,7 @@ class TodoApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showCompleted: false,
+      showCompleted: true,
       searchText: '',
       todos: getTodos()
     }
@@ -55,7 +55,7 @@ class TodoApp extends Component {
    */
   handleSearch(completed, term) {
     this.setState({
-      showCompleted: completed,
+      showCompleted: !completed,
       searchText: term.toLowerCase()
     });
   }
@@ -82,11 +82,18 @@ class TodoApp extends Component {
     const { todos, showCompleted, searchText } = this.state;
     const filteredTodos = filterTodos(todos, showCompleted, searchText);
     return (
-      <div>
-        <TodoSearch onSearch={this.handleSearch} />
-        <TodoList todos={filteredTodos} onTodoToggle={this.handleTodoToggle} />
-        <AddTodo onTodoAdd={this.handleTodoAdd} />
-      </div>
+      <main className="panel">
+        <header className="panel__header">
+          <h1 className="text-uppercase">Just ToDo it!</h1>
+        </header>
+        <section className="panel__body">
+          <TodoSearch onSearch={this.handleSearch} />
+          <TodoList todos={filteredTodos} onTodoToggle={this.handleTodoToggle} />
+        </section>
+        <footer className="panel__footer">
+          <AddTodo onTodoAdd={this.handleTodoAdd} />
+        </footer>
+      </main>
     )
   }
 }

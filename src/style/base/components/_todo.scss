@@ -1,0 +1,66 @@
+.todolist {
+  margin: 2rem 0;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8rem auto;
+  padding: 1rem;
+  border: 1px solid rgba($font-color-base, 0.3);
+  border-left: 5px solid $success-color-base;
+  &__checkbox {
+    max-width: 3rem;
+    width: 100%;
+    flex: none;
+    input {
+      display: none;
+    }
+    &__holder {
+      display: block;
+      position: relative;
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid $font-color-base;
+      &--completed {
+        border-color: $success-color-base;
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          position: relative;
+          top: 6px;
+          left: 3px;
+          height: 4px;
+          width: 2rem;
+          background: $success-color-base;
+          transform: rotate(-55deg);
+        }
+        &::after {
+          transform: rotate(45deg);
+          width: 1rem;
+          left: 0;
+        }
+      }
+    }
+  }
+  &__name,
+  &__timestamp {
+    &--completed {
+      color: lighten($font-color-base, 30%);
+    }
+  }
+  &__name {
+    font-size: 1.8rem;
+    flex: 2;
+    font-family: $font-family-script;
+    &--completed {
+      text-decoration: line-through;
+    }
+  }
+  &__timestamp {
+    font-size: 1.2rem;
+  }
+}

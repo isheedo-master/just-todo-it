@@ -1,0 +1,29 @@
+:root,
+html,
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  color: $font-color-base;
+}
+
+input {
+  &[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid lighten($font-color-base, 40%);
+    padding: 1rem 0.5rem;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 1.6rem;
+  }
+}
+
+body {
+  background: $success-color-base;
+}
+
+p, a{
+  font-size: 1.6rem;
+  font-family: $font-family-script;
+}

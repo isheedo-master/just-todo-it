@@ -14,13 +14,22 @@ class Todo extends Component {
       }
       return `${message} ${moment.unix(timestamp).format('MMM Do YYYY @ h:mm A')}`;
     }
+    let todoClass = completed ? 'completed' : 'ongoing';
     return (
-      <li id={`todo-${id}`}>
-        <input type="checkbox"
-          checked={completed}
-          onChange={() => { onClick(id) }}
-        />
-        {text} - {formatTimestamp()}
+      <li id={`todo-${id}`} className="todo">
+        <label className="todo__checkbox">
+          <span className={`todo__checkbox__holder todo__checkbox__holder--${todoClass}`}></span>
+          <input type="checkbox"
+            checked={completed}
+            onChange={() => { onClick(id) }}
+          />
+        </label>
+        <span className={`todo__name todo__name--${todoClass}`}>
+          {text}
+        </span>
+        <span className={`todo__timestamp todo__timestamp--${todoClass}`}>
+          {formatTimestamp()}
+        </span>
       </li>
     )
   }

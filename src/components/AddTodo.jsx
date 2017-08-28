@@ -31,7 +31,7 @@ class AddTodo extends Component {
           placeholder="Add your todo text and click add button"
           ref="input"
         />
-        <button type="submit">Add Todo</button>
+        <button className="text-uppercase" type="submit">Add Todo</button>
       </form>
     )
   }
