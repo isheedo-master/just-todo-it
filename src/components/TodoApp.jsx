@@ -4,7 +4,7 @@ import moment from 'moment';
 import TodoSearch from './TodoSearch';
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
-import { getTodos, setTodos, filterTodos, fuck } from '../api/TodoAPI';
+import { getTodos, setTodos, filterTodos } from '../api/TodoAPI';
 
 
 class TodoApp extends Component {
